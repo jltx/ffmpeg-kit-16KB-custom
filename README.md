@@ -1,3 +1,6 @@
+#Custom command for Josh's project: Use the following options when building:
+./android.sh --enable-gpl --enable-android-media-codec --enable-android-zlib --api-level=26
+
 # 16KB Page Size Update
 This fork only aims to make ffmpeg-kit compatible with new android versions (API 35) which request all binaries to be rebuilt.
 Google request developers to build new with new r27 and r28 ndk but ffmpeg-kit has its own NDK compatibility table which supports only upto r25.</p>

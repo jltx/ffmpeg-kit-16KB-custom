@@ -25,6 +25,7 @@ ${SED_INLINE} 's/gnu++98/c++11/g' "${BASEDIR}"/src/"${LIB_NAME}"/source/CMakeLis
 
 cmake -Wno-dev \
   -DCMAKE_VERBOSE_MAKEFILE=0 \
+  -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
   -DCMAKE_C_FLAGS="${CFLAGS}" \
   -DCMAKE_CXX_FLAGS="${CXXFLAGS}" \
   -DCMAKE_EXE_LINKER_FLAGS="${LDFLAGS}" \
@@ -44,7 +45,7 @@ cmake -Wno-dev \
   -DENABLE_CLI=0 \
   -DHIGH_BIT_DEPTH=1 \
   ${ASM_OPTIONS} \
-  -DCMAKE_SYSTEM_PROCESSOR="${ARCH}" \
+  -DCMAKE_SYSTEM_PROCESSOR=$(get_cmake_system_processor) \
   -DENABLE_SHARED=0 "${BASEDIR}"/src/"${LIB_NAME}"/source || return 1
 
 make -j$(get_cpu_count) || return 1

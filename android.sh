@@ -164,7 +164,7 @@ if [[ -n ${BUILD_FULL} ]]; then
 fi
 
 # DISABLE SPECIFIED LIBRARIES
-for disabled_library in ${disabled_libraries[@]}; do
+for disabled_library in "${disabled_libraries[@]}"; do
   set_library "${disabled_library}" 0
 done
 
